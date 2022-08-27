@@ -18,7 +18,7 @@ RUN npm run build
 # FOR MAC/LINUX
 #FROM nginxinc/nginx-unprivileged:latest
 
-# FOR WINDOWS
+# FOR WINDOWS 
 FROM nginx:latest
 
 ENV SSO_URL "http://localhost:4000"
