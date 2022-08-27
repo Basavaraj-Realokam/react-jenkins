@@ -24,7 +24,7 @@ FROM nginx:latest
 ENV SSO_URL "http://localhost:4000"
 ENV BE_IP_PORT "http://localhost:8000"
 #COPY app contents
-COPY --from=build --chown=nginx:nginx dist  /usr/share/nginx/html/realoq-ui
+COPY --from=build --chown=nginx:nginx app/build  /usr/share/nginx/html/realoq-ui
 
 #create a file to be used in http healthcheck probe
 # RUN touch /usr/share/nginx/html/realoq-ui/healthcheck
