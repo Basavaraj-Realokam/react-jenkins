@@ -13,17 +13,14 @@ pipeline {
         }
         stage('Package') {
             steps {
-                
-                    script {
-                       
-                            echo "docker build, tag and push image
-                            ${IMAGE_NAME}:${IMAGE_TAG}-${env.BUILD_NUMBER}"
-                            def image = docker.build("${IMAGE_NAME}",
-                            IMAGE_TAG)
-                           echo "Image Status"
-                        echo ${image}
-                        
-                    }
+               script {
+                    echo "docker build, tag and push image
+                    ${IMAGE_NAME}:${IMAGE_TAG}-${env.BUILD_NUMBER}"
+                    def image = docker.build("${IMAGE_NAME}",
+                    IMAGE_TAG)
+                    echo "Image Status"
+                    echo "${image}"
+                }     
                
             }
         }
